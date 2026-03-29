@@ -38,7 +38,7 @@ def project_to_ground_direct(u, v, K, E):
     return p_ego[0], p_ego[1]
 
 def generate_final_dashboard(scene_no=1, frame_idx=20):
-    print(f"Device: {DEVICE} | 🚀 Starting Final Fusion Engine...")
+    print(f"Device: {DEVICE} | Starting Final Fusion Engine...")
     nusc = NuScenes(version=VERSION, dataroot=DATAROOT, verbose=False)
     ds = NuScenesBEVDataset(nusc, [scene_no], augment=False)
     yolo_model = YOLO('yolov8n.pt').to(DEVICE)
