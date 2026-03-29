@@ -6,7 +6,7 @@ from pyquaternion import Quaternion
 from tqdm import tqdm
 
 # --- CONFIGURATION ---
-DATAROOT = '/home/abhi_pop/MAHE/bev_project/nuscenes/mini' 
+DATAROOT = '/path/to/nuscenes/mini' 
 MODEL_PATH = 'yolov8n.pt'  
 CONF_THRESH = 0.25
 # Distance thresholds for mAP (Standard nuScenes benchmarks)
@@ -111,8 +111,7 @@ def evaluate():
                     total_fps += 1
             else:
                 total_fps += 1
-
-    # --- FINAL MATH ---
+                
     # Precision/Recall/F1/Accuracy at 4m (The "Fair" threshold)
     tp_final = tp_at_threshold[4.0]
     precision = tp_final / (tp_final + total_fps) if (tp_final + total_fps) > 0 else 0
@@ -128,7 +127,7 @@ def evaluate():
     mIoU = np.mean(all_ious) if all_ious else 0
 
     print("\n" + "═"*45)
-    print("      🏆 HACKATHON PERFORMANCE DASHBOARD")
+    print("      HACKATHON PERFORMANCE DASHBOARD")
     print("═"*45)
     print(f"• Accuracy:        {accuracy*100:.1f}%")
     print(f"• Precision:       {precision:.4f}")
