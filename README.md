@@ -28,12 +28,14 @@ The system was developed and tested on Pop!_OS / Ubuntu 24.04 using an NVIDIA Ge
 ### Installation Steps
 1. Clone the Repository
 ```
-git clone [https://github.com/suryabalakrishnan07/bev-yolov8-raycasting.git](https://github.com/suryabalakrishnan07/bev-yolov8-raycasting.git)
+git clone https://github.com/suryabalakrishnan07/bev-yolov8-raycasting.git
 cd bev-yolov8-raycasting
 ```
 2. Create and Activate Environment
 ```
 python3 -m venv bev_env
+source bev-yolov8-raycasting-env/bin/activate
+
 ```
 3. Install Dependencies
 ```
@@ -43,6 +45,7 @@ pip install ultralytics nuscenes-devkit pyquaternion tqdm torch torchvision
 
 ## How to install
 
+NOTE: v1.0-mini dataset should be pre-installed 
 To reproduce the evaluation metrics and verify the performance of the geometric radar engine, execute the primary evaluation script:
 ```
 python evaluation.py
