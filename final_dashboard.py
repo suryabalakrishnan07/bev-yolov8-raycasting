@@ -76,12 +76,11 @@ def generate_final_dashboard(scene_no=1, frame_idx=20):
         ax.set_title(f"{name}", color='cyan', fontsize=10)
         ax.axis('off')
 
-    # --- BEV RADAR (THE FIX IS HERE) ---
+    # --- BEV RADAR ---
     ax_bev = fig.add_subplot(gs[:, 3])
     
-    # Corrected Record Fetching
-    scene_rec = nusc.scene[scene_no] # This is already the dictionary!
-    log_rec = nusc.get('log', scene_rec['log_token']) # Pass the token string, not the dict
+    scene_rec = nusc.scene[scene_no] 
+    log_rec = nusc.get('log', scene_rec['log_token']) 
     nmap = NuScenesMap(dataroot=DATAROOT, map_name=log_rec['location'])
     
     sample_token = ds.samples[frame_idx]
@@ -118,7 +117,7 @@ def generate_final_dashboard(scene_no=1, frame_idx=20):
 
     plt.tight_layout()
     plt.savefig("fusion_dashboard_final.png", facecolor='black', dpi=150)
-    print(f"✨ Success! Dashboard saved as 'fusion_dashboard_final.png'.")
+    print(f" Success! Dashboard saved as 'fusion_dashboard_final.png'.")
     plt.show()
 
 if __name__ == "__main__":
