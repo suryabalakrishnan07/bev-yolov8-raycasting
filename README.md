@@ -45,7 +45,8 @@ pip install ultralytics nuscenes-devkit pyquaternion tqdm torch torchvision
 
 ## How to install
 
-NOTE: v1.0-mini dataset should be pre-installed 
+NOTE: v1.0-mini dataset should be pre-installed
+
 To reproduce the evaluation metrics and verify the performance of the geometric radar engine, execute the primary evaluation script:
 ```
 python evaluation.py
