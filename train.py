@@ -266,7 +266,7 @@ def main():
     torch.backends.cuda.matmul.allow_tf32 = True; torch.backends.cudnn.allow_tf32 = True
 
     # Resuming from the next epoch after your stop (Epoch 7 complete, so start at 8)
-    for ep in range(8, 30):
+    for ep in range(0, 30):
         run_epoch(model, tl, opt, sched, scaler, DEVICE, True, ep)
         sched.step(); torch.save(model.state_dict(), CKPT)
         print(f"Epoch {ep} saved with Distance-Weighted Loss.")
