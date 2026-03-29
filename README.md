@@ -32,9 +32,9 @@ git clone [https://github.com/suryabalakrishnan07/bev-yolov8-raycasting.git](htt
 cd bev-yolov8-raycasting
 ```
 2. Create and Activate Environment
-   ```
-   python3 -m venv bev_env
-   ```
+```
+python3 -m venv bev_env
+```
 3. Install Dependencies
 ```
 pip install ultralytics nuscenes-devkit pyquaternion tqdm torch torchvision
@@ -58,17 +58,11 @@ The system was evaluated using industry-standard metrics for Bird's-Eye-View per
 
 ### Performance Benchmarks
 |Metric|Result|Engineering Significance|
-|---|---|---|
 |Throughput|42 FPS|Real-time perfomance on consumer GPUs|
-|---|---|---|
 |mAP(Multi-Distance)|0.2787|Consisten detection across 1m, 2m, 4m, and 8m|
-|---|---|---|
 |BEV IoU|0.2583|Strong spatial overlap on the top-down map|
-|---|---|---|
 |Precision|0.3579|Optimized to minimize false-positive detections|
-|---|---|---|
 |Accuracy|13.0%|SOlid baseline for pure-vision geometric projection|
-|---|---|---|
 
 ### Visual Results
 - fusion_dashboard_final.png: High-resolution output showing the unified 360-degree radar map.
