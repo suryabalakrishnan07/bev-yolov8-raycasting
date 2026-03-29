@@ -36,7 +36,7 @@ def project_to_ground_direct(u, v, K, E):
     return p_ego[0], p_ego[1]
 
 def generate_scene_video(scene_no=1, output_name="boston_seaport_perception.mp4"):
-    print(f"Device: {DEVICE} | 🎥 Initializing Video Engine for Scene {scene_no}...")
+    print(f"Device: {DEVICE} | Initializing Video Engine for Scene {scene_no}...")
     nusc = NuScenes(version=VERSION, dataroot=DATAROOT, verbose=False)
     
     # 1. Setup Scene & Map
@@ -132,10 +132,10 @@ def generate_scene_video(scene_no=1, output_name="boston_seaport_perception.mp4"
         f_path = os.path.join(frames_dir, f"frame_{idx:04d}.png")
         plt.savefig(f_path, bbox_inches='tight', facecolor='black', dpi=100)
         frame_files.append(f_path)
-        plt.close(fig) # CRITICAL: Close figure to prevent memory crash
+        plt.close(fig) 
 
     # 4. Final Video Assembly
-    print("🎥 Compiling frames into MP4...")
+    print(" Compiling frames into MP4...")
     sample_img = cv2.imread(frame_files[0])
     h, w, _ = sample_img.shape
     # 4 FPS is standard for nuScenes Keyframes
@@ -144,7 +144,7 @@ def generate_scene_video(scene_no=1, output_name="boston_seaport_perception.mp4"
     for f in frame_files:
         v_out.write(cv2.imread(f))
     v_out.release()
-    print(f"✨ SUCCESS! Final video saved as: {output_name}")
+    print(f" SUCCESS! Final video saved as: {output_name}")
 
 if __name__ == "__main__":
     generate_scene_video(scene_no=1)
